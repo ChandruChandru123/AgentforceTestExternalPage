@@ -9,7 +9,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
+        <div class="header-container">
             <div class="logo">ShopHub</div>
             <nav class="nav">
                 <a href="#home">Home</a>
@@ -17,247 +17,223 @@
                 <a href="#cart">Cart</a>
                 <a href="#account">Account</a>
             </nav>
-            <div class="header-right">
-                <span class="cart-icon">🛒 Cart (0)</span>
-            </div>
+            <div class="cart-icon">🛒 Cart (0)</div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container main-content">
-        <div class="product-container">
-            <!-- Image Section -->
-            <div class="image-section">
-                <div class="main-image-wrapper">
-                    <img id="mainImage" src="https://via.placeholder.com/500x500?text=Product+Image+1" alt="Product Image" class="main-image">
-                    <div id="discountBadge" class="discount-badge">25% OFF</div>
-                </div>
-                <div class="thumbnail-gallery">
-                    <img src="https://via.placeholder.com/500x500?text=Product+Image+1" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)">
-                    <img src="https://via.placeholder.com/500x500?text=Product+Image+2" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://via.placeholder.com/500x500?text=Product+Image+3" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">
-                    <img src="https://via.placeholder.com/500x500?text=Product+Image+4" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">
-                </div>
-            </div>
-
-            <!-- Details Section -->
-            <div class="details-section">
-                <!-- Product Name -->
-                <h1 class="product-name">Premium Wireless Headphones</h1>
-
-                <!-- Rating -->
-                <div class="rating-section">
-                    <div class="stars">★★★★☆</div>
-                    <span class="rating-value">4.5</span>
-                    <span class="review-count">(328 reviews)</span>
-                </div>
-
-                <!-- Price -->
-                <div class="price-section">
-                    <span class="current-price">$149.99</span>
-                    <span class="original-price">$199.99</span>
-                </div>
-
-                <!-- Description -->
-                <p class="description">Experience premium sound quality with our wireless headphones. Featuring active noise cancellation, 30-hour battery life, and premium comfort for all-day wear. Perfect for music lovers, professionals, and travelers.</p>
-
-                <!-- Stock Status -->
-                <div class="stock-status">
-                    <span class="in-stock">✓ In Stock (50 available)</span>
-                </div>
-
-                <!-- Quantity Selector -->
-                <div class="quantity-section">
-                    <label for="quantity">Quantity:</label>
-                    <div class="quantity-control">
-                        <button onclick="decreaseQuantity()">−</button>
-                        <input type="number" id="quantity" value="1" min="1" max="50" readonly>
-                        <button onclick="increaseQuantity()">+</button>
+    <div class="main-wrapper">
+        <div class="container">
+            <!-- Product Section -->
+            <div class="product-main">
+                <!-- Left: Image Section -->
+                <div class="image-section">
+                    <div class="main-image-wrapper">
+                        <img id="mainImage" src="https://via.placeholder.com/400x400?text=Product+Image" alt="Product Image" class="main-image">
+                        <div class="discount-badge">25% OFF</div>
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <img src="https://via.placeholder.com/400x400?text=Product+Image+1" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/400x400?text=Product+Image+2" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/400x400?text=Product+Image+3" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                        <img src="https://via.placeholder.com/400x400?text=Product+Image+4" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">
                     </div>
                 </div>
 
-                <!-- Color Selection -->
-                <div class="color-section">
-                    <label>Color:</label>
-                    <div class="color-options">
-                        <button class="color-btn active" style="background-color: #000;" title="Black"></button>
-                        <button class="color-btn" style="background-color: #fff; border: 2px solid #ccc;" title="White"></button>
-                        <button class="color-btn" style="background-color: #4169e1;" title="Blue"></button>
-                        <button class="color-btn" style="background-color: #ff6347;" title="Red"></button>
+                <!-- Middle: Details Section -->
+                <div class="details-section">
+                    <h1 class="product-name">Premium Wireless Headphones</h1>
+
+                    <!-- Rating -->
+                    <div class="rating-section">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-value">4.5</span>
+                        <span class="review-count">(328 reviews)</span>
                     </div>
-                </div>
 
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="add-to-cart" onclick="addToCart()">🛒 Add to Cart</button>
-                    <button class="wishlist-btn" onclick="toggleWishlist()">♡ Wishlist</button>
-                </div>
+                    <!-- Price -->
+                    <div class="price-section">
+                        <span class="current-price">$149.99</span>
+                        <span class="original-price">$199.99</span>
+                    </div>
 
-                <!-- Additional Info -->
-                <div class="additional-info">
-                    <div class="info-item">
-                        <span class="icon">🚚</span>
-                        <div>
-                            <p>Free Shipping</p>
-                            <small>On orders over $50</small>
+                    <!-- Description -->
+                    <p class="description">Experience premium sound quality with our wireless headphones. Featuring active noise cancellation, 30-hour battery life, and premium comfort for all-day wear.</p>
+
+                    <!-- Stock Status -->
+                    <div class="stock-status">
+                        <span class="in-stock">✓ In Stock (50 available)</span>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="quantity-section">
+                        <label>Quantity:</label>
+                        <div class="quantity-control">
+                            <button onclick="decreaseQuantity()">−</button>
+                            <input type="number" id="quantity" value="1" readonly>
+                            <button onclick="increaseQuantity()">+</button>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <span class="icon">↩️</span>
-                        <div>
-                            <p>Easy Returns</p>
-                            <small>30-day return policy</small>
+
+                    <!-- Color -->
+                    <div class="color-section">
+                        <label>Color:</label>
+                        <div class="color-options">
+                            <button class="color-btn active" style="background-color: #000;" title="Black"></button>
+                            <button class="color-btn" style="background-color: #fff; border: 2px solid #ccc;" title="White"></button>
+                            <button class="color-btn" style="background-color: #4169e1;" title="Blue"></button>
+                            <button class="color-btn" style="background-color: #ff6347;" title="Red"></button>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <span class="icon">🛡️</span>
-                        <div>
-                            <p>1 Year Warranty</p>
-                            <small>Full manufacturer warranty</small>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                        <button class="wishlist-btn" onclick="toggleWishlist()">♡ Wishlist</button>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="additional-info">
+                        <div class="info-item">
+                            <span class="icon">🚚</span>
+                            <div>
+                                <p>Free Shipping</p>
+                                <small>On orders over $50</small>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">↩️</span>
+                            <div>
+                                <p>Easy Returns</p>
+                                <small>30-day return policy</small>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">🛡️</span>
+                            <div>
+                                <p>1 Year Warranty</p>
+                                <small>Full manufacturer warranty</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Specifications & Reviews -->
+                <div class="right-section">
+                    <!-- Specifications -->
+                    <div class="specifications-box">
+                        <h3>Product Specifications</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td><strong>Brand</strong></td>
+                                <td>Premium Audio Co.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Model</strong></td>
+                                <td>PAC-X1000</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Color</strong></td>
+                                <td>Black, White, Blue, Red</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Battery Life</strong></td>
+                                <td>30 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Charging Time</strong></td>
+                                <td>2 hours</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Noise Cancellation</strong></td>
+                                <td>Active (ANC)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Connectivity</strong></td>
+                                <td>Bluetooth 5.0, 3.5mm jack</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Weight</strong></td>
+                                <td>250g</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Warranty</strong></td>
+                                <td>1 Year Manufacturer</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Customer Reviews -->
+                    <div class="reviews-box">
+                        <h3>Customer Reviews</h3>
+                        <div class="review-item">
+                            <strong>John Doe</strong>
+                            <span class="review-date">2 weeks ago</span>
+                            <div class="review-stars">★★★★★</div>
+                            <p>Excellent product! The sound quality is amazing and the battery lasts forever. Highly recommended!</p>
+                        </div>
+                        <div class="review-item">
+                            <strong>Sarah Smith</strong>
+                            <span class="review-date">1 month ago</span>
+                            <div class="review-stars">★★★★☆</div>
+                            <p>Great headphones! Very comfortable and the noise cancellation works perfectly.</p>
+                        </div>
+                        <div class="review-item">
+                            <strong>Mike Johnson</strong>
+                            <span class="review-date">2 months ago</span>
+                            <div class="review-stars">★★★★★</div>
+                            <p>Best purchase ever! Worth every penny. The build quality is premium.</p>
+                        </div>
+                    </div>
+
+                    <!-- Related Products -->
+                    <div class="related-products-box">
+                        <h3>Related Products</h3>
+                        <div class="related-item">
+                            <img src="https://via.placeholder.com/150x150?text=Speaker" alt="Product">
+                            <div>
+                                <h4>Wireless Speaker</h4>
+                                <div class="product-price">$79.99 <span class="old">$99.99</span></div>
+                                <div class="product-rating">★★★★★ (215)</div>
+                                <button class="quick-add">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <img src="https://via.placeholder.com/150x150?text=Earbuds" alt="Product">
+                            <div>
+                                <h4>Earbuds Pro</h4>
+                                <div class="product-price">$89.99 <span class="old">$129.99</span></div>
+                                <div class="product-rating">★★★★☆ (189)</div>
+                                <button class="quick-add">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <img src="https://via.placeholder.com/150x150?text=Case" alt="Product">
+                            <div>
+                                <h4>Headphone Case</h4>
+                                <div class="product-price">$19.99 <span class="old">$29.99</span></div>
+                                <div class="product-rating">★★★★★ (342)</div>
+                                <button class="quick-add">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <img src="https://via.placeholder.com/150x150?text=Cable" alt="Product">
+                            <div>
+                                <h4>Audio Cable</h4>
+                                <div class="product-price">$9.99 <span class="old">$14.99</span></div>
+                                <div class="product-rating">★★★★☆ (127)</div>
+                                <button class="quick-add">Quick Add</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Product Specifications -->
-        <section class="specifications">
-            <h2>Product Specifications</h2>
-            <table class="specs-table">
-                <tbody>
-                    <tr>
-                        <td><strong>Brand</strong></td>
-                        <td>Premium Audio Co.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Model</strong></td>
-                        <td>PAC-X1000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Color</strong></td>
-                        <td>Black, White, Blue, Red</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Battery Life</strong></td>
-                        <td>30 hours</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Charging Time</strong></td>
-                        <td>2 hours</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Noise Cancellation</strong></td>
-                        <td>Active (ANC)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Connectivity</strong></td>
-                        <td>Bluetooth 5.0, 3.5mm jack</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Weight</strong></td>
-                        <td>250g</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Warranty</strong></td>
-                        <td>1 Year Manufacturer Warranty</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Customer Reviews -->
-        <section class="reviews-section">
-            <h2>Customer Reviews</h2>
-            <div class="reviews-list">
-                <div class="review-item">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <strong>John Doe</strong>
-                            <span class="review-date">2 weeks ago</span>
-                        </div>
-                        <span class="review-stars">★★★★★</span>
-                    </div>
-                    <p class="review-text">Excellent product! The sound quality is amazing and the battery lasts forever. Highly recommended!</p>
-                </div>
-
-                <div class="review-item">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <strong>Sarah Smith</strong>
-                            <span class="review-date">1 month ago</span>
-                        </div>
-                        <span class="review-stars">★★★★☆</span>
-                    </div>
-                    <p class="review-text">Great headphones! Very comfortable and the noise cancellation works perfectly. Only minor issue with the app.</p>
-                </div>
-
-                <div class="review-item">
-                    <div class="review-header">
-                        <div class="reviewer-info">
-                            <strong>Mike Johnson</strong>
-                            <span class="review-date">2 months ago</span>
-                        </div>
-                        <span class="review-stars">★★★★★</span>
-                    </div>
-                    <p class="review-text">Best purchase ever! Worth every penny. The build quality is premium and they feel so comfortable.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Related Products -->
-        <section class="related-products">
-            <h2>Related Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x250?text=Product+1" alt="Product 1">
-                    <h3>Wireless Speaker</h3>
-                    <div class="product-price">
-                        <span class="price">$79.99</span>
-                        <span class="original">$99.99</span>
-                    </div>
-                    <div class="product-rating">★★★★★ (215)</div>
-                    <button class="quick-add">Quick Add</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x250?text=Product+2" alt="Product 2">
-                    <h3>Earbuds Pro</h3>
-                    <div class="product-price">
-                        <span class="price">$89.99</span>
-                        <span class="original">$129.99</span>
-                    </div>
-                    <div class="product-rating">★★★★☆ (189)</div>
-                    <button class="quick-add">Quick Add</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x250?text=Product+3" alt="Product 3">
-                    <h3>Headphone Case</h3>
-                    <div class="product-price">
-                        <span class="price">$19.99</span>
-                        <span class="original">$29.99</span>
-                    </div>
-                    <div class="product-rating">★★★★★ (342)</div>
-                    <button class="quick-add">Quick Add</button>
-                </div>
-
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/250x250?text=Product+4" alt="Product 4">
-                    <h3>Audio Cable</h3>
-                    <div class="product-price">
-                        <span class="price">$9.99</span>
-                        <span class="original">$14.99</span>
-                    </div>
-                    <div class="product-rating">★★★★☆ (127)</div>
-                    <button class="quick-add">Quick Add</button>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-container">
             <div class="footer-section">
                 <h4>About Us</h4>
                 <ul>
@@ -296,7 +272,7 @@
         </div>
     </footer>
 
-    <!-- Toast Notification -->
+    <!-- Toast -->
     <div id="toast" class="toast"></div>
 
     <script src="script.js"></script>
